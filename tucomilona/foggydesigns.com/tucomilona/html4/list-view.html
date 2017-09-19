@@ -1,0 +1,425 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!-- Mirrored from foggydesigns.com/tucomilona/html4/list-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Sep 2017 17:53:12 GMT -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tucomilona</title>
+<link href="css/style.css" type="text/css" rel="stylesheet" />
+<link href="css/responsive.css" type="text/css" rel="stylesheet" />
+<link href="css/popModal.css" type="text/css" rel="stylesheet" />
+<link href="css/nouislider.css" type="text/css" rel="stylesheet" />
+<!-- popup -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popModal.js"></script>
+<script src="js/custom.js"></script>
+</head>
+
+<body>
+<section id="outer">
+  <header>
+    <div class="topBar">
+      <div class="container"> <a href="javascript:void(0)" id="logo"><img src="images/logo.png" alt="" /></a>
+        <div class="topRightBar">
+          <div class="cart">
+            <div class="cartIcon"><img src="images/cart.png" alt="" />
+              <div class="cartNo">0</div>
+            </div>
+            <span>0 item(s) - $0.00</span> </div>
+          <div class="loginuser userDropdown">John Marks
+            <div class="subDropdown" id="userDropdown">
+              <ul>
+                <li><a href="javascript:void(0)" id="myProfile">Profile</a></li>
+                <li><a href="javascript:void(0)" id="myOrders">My Orders</a></li>
+                <li><a href="javascript:void(0)" id="logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="homepage-header-background" style="background-image: url('images/innerBanner.png')"></div>
+    <div class="static-header innerpage-Banner">
+      <div class="container">
+        <h1>Search Your Favour Food</h1>
+        <p>Find restaurants, specials, and coupons for free</p>
+        <div class="geo-location">
+          <div class="location">
+            <input name="location" type="text" placeholder="Type your location ?" value="">
+          </div>
+          <div class="submit">
+            <input type="submit" value="Find Restaurant">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="section filterView">
+    <div class="filterBar">
+      <div class="container"> <span class="result">Showing all 9 results</span>
+        <div class="loginuser selectSorting"><span>Default sorting</span>
+          <div class="subDropdown subDropdown2">
+            <ul>
+              <li><a href="javascript:void(0)">Default 1</a></li>
+              <li><a href="javascript:void(0)">Default 2</a></li>
+              <li><a href="javascript:void(0)">Default 3</a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="selectView">
+          <li><a href="grid-view.html" class="gridView"></a></li>
+          <li><a href="list-view.html" class="listView active"></a></li>
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="productColOuter">
+      <div class="container">
+        <div class="leftCol">
+         <a href="javacript:void(0)" class="filterBtn">Search Filters</a>
+          <div class="leftInner"><ul class="category">
+            <li class="redHeading">Search Filters</li>
+            <li class="searchtext">
+              <input type="text" value="" />
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="beverages" name="selector">
+              <label for="beverages">Beverages</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="burgers" name="selector">
+              <label for="burgers">Burgers</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="pasta" name="selector">
+              <label for="pasta">Pasta</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="pizza" name="selector">
+              <label for="pizza">pizza</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="sandwiches" name="selector">
+              <label for="sandwiches">Sandwiches</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="seafood" name="selector">
+              <label for="seafood">Seafood</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="soupSalads" name="selector">
+              <label for="soupSalads">Soup and Salads</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+          <ul class="category borderTN">
+            <li class="textHeading">FOOD FOR</li>
+            <li class="code-block cs-radio width50">
+              <input type="radio" id="delivery" name="foodFor">
+              <label for="delivery">Delivery</label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio width50">
+              <input type="radio" id="pickup" name="foodFor">
+              <label for="pickup">Pickup</label>
+              <div class="check"></div>
+            </li>
+          </ul>
+          <ul class="category borderTN">
+            <li class="textHeading">MINIMUM ORDER AMOUNT</li>
+            <li class="price-bar">
+              <div id="price-range"></div>
+              <div class="price-values clearfix"> <span id="price-range-value-lower"></span> <span id="price-range-value-upper"></span> </div>
+            </li>
+          </ul>
+          <ul class="category borderTN ratingCol">
+            <li class="textHeading">RATING</li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="5star" name="rating">
+              <label for="5star"><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /></label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="4star" name="rating">
+              <label for="4star"><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /></label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="3star" name="rating">
+              <label for="3star"><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /></label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="2star" name="rating">
+              <label for="2star"><img src="images/star.png" alt="" /><img src="images/star.png" alt="" /></label>
+              <div class="check"></div>
+            </li>
+            <li class="code-block cs-radio">
+              <input type="radio" id="1star" name="rating">
+              <label for="1star"><img src="images/star.png" alt="" /></label>
+              <div class="check"></div>
+            </li>
+          </ul>
+          <ul class="category borderTN">
+            <li class="redBtnOuter"><a href="javascript:void(0)">Search</a></li>
+          </ul></div>
+        </div>
+        <div class="rightCol listViewPage">
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="hotelInfo">
+            <div class="hotelThumb">
+              <div class="hotelImgOuter">
+                <div class="hotelImg"><a href="javascript:void(0)"><img src="images/hotelThumb01.png" alt="" /></a></div>
+              </div>
+              <div class="hotelThumbInfo freeDelivery">
+                <h4>Central pizzeria</h4>
+                <p>Mauris interdum diam lorem. Sed…</p>
+                <div class="tags"> <span>Nuevo</span> <span>Recommendado</span> <span>-25%</span> </div>
+                <div class="hotelTiming">9:30 am TO 10:30 pm</div>
+                <div class="fullWidth"><span class="addressTag">68 5th Avenue New York</span>
+                  <div class="orderCond">Minimum order <span>10$</span></div>
+                </div>
+              </div>
+              <div class="hotelThumbBottom">
+                <div class="ratingStatus"> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <img src="images/star02.png" alt="" /> <span> 7 Reviews </span> </div>
+                <a href="javascript:void(0)" class="moreBtn">Read More</a> </div>
+            </div>
+          </div>
+          <div class="paginationOuter">
+            <div class="pagination"> <a href="javascript:void(0)" class="prev"></a> <a href="javascript:void(0)" class="active">1</a> <a href="javascript:void(0)">2</a> <a href="javascript:void(0)">3</a> <a href="javascript:void(0)" class="next"></a> </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="footerCommon footerleft">
+        <h6>Get to Know Us</h6>
+        <ul>
+          <li><a href="javascript:void(0)">About Us</a></li>
+          <li><a href="javascript:void(0)">Blog</a></li>
+          <li><a href="javascript:void(0)">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footerCommon footerCenter">
+        <h6>Doing Business</h6>
+        <ul>
+          <li><a href="javascript:void(0)">Become a Dasher</a></li>
+          <li><a href="javascript:void(0)">Be a Partner Restaurant</a></li>
+          <li><a href="javascript:void(0)">Get Dashers for Deliveries</a></li>
+        </ul>
+      </div>
+      <div class="footerCommon footerCenter2">
+        <h6>Get in touch</h6>
+        <ul>
+          <li><a href="javascript:void(0)">78588544</a></li>
+          <li><a href="mailto:info@tucomilona.com">info@tucomilona.com</a></li>
+        </ul>
+      </div>
+      <div class="footerCommon footerRight">
+        <h6>Follow us on</h6>
+        <ul>
+          <li><a href="javascript:void(0)"><img src="images/fb.png" alt="" /></a></li>
+          <li><a href="javascript:void(0)"><img src="images/wtsap.png" alt="" /></a></li>
+          <li><a href="javascript:void(0)"><img src="images/twitter.png" alt="" /></a></li>
+        </ul>
+      </div>
+      <div class="copyRight">
+        <p> tucomilona © 2017. All Rights Reserved. <a href="javascript:void(0)">Terms of Use</a> and <a href="javascript:void(0)">Privacy Policy</a></p>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </footer>
+</section>
+
+<!-- end --> 
+<!-- popup -->
+<div id="dialog_content" class="dialog_content" style="display:none">
+  <div class="dialogModal_content">
+    <div class="dialogModal_header">Sign In to Tucomilona</div>
+    <div class="form-field">
+      <div class="input-fields">
+        <label>Email Id </label>
+        <input value="" type="text">
+      </div>
+      <div class="input-fields">
+        <label>Password</label>
+        <input value="" type="text">
+      </div>
+      <label class="rembr">
+        <input type="checkbox">
+        <span>Remember me</span></label>
+      <a href="javascript:void(0)" class="forgot">Forgot password?</a>
+      <div class="input-fields">
+        <input value="Log In" type="submit">
+      </div>
+      <div class="info-signup">By logging in, You agree to Tucomilona <a href="#">Terms of Service</a>, <a href="#">Cookie Policy</a>, <a href="#">Privacy Policy</a> and <a href="#">Content Policies.</a></div>
+    </div>
+  </div>
+</div>
+<div id="dialog_content2" class="dialog_content2" style="display:none">
+  <div class="dialogModal_content">
+    <div class="dialogModal_header">Sign Up to Tucomilona</div>
+    <div class="form-field">
+      <div class="input-fields">
+        <label>Full Name</label>
+        <input value="" type="text">
+      </div>
+      <div class="input-fields">
+        <label>Email Address</label>
+        <input value="" type="text">
+      </div>
+      <div class="input-fields">
+        <label>Phone Number</label>
+        <input value="" type="text">
+      </div>
+      <div class="input-fields">
+        <label>Password</label>
+        <input value="" type="text">
+      </div>
+      <div class="input-fields">
+        <input value="Sign Up" type="submit">
+      </div>
+      <div class="info-signup">By logging in, You agree to Tucomilona <a href="javascript:void(0)">Terms of Service</a>, <a href="javascript:void(0)">Cookie Policy</a>, <a href="javascript:void(0)">Privacy Policy</a> and <a href="javascript:void(0)">Content Policies.</a></div>
+    </div>
+  </div>
+</div>
+<!-- JS Files For Price Bar --> 
+<script type="text/javascript" src="js/nouislider.js"></script> 
+<script>
+var snapSlider = document.getElementById('price-range');
+  noUiSlider.create(snapSlider, {
+    start: [ 20, 480 ],
+    snap: true,
+    connect: true,
+    range: {
+      'min': 0,
+      '10%': 100,
+      '20%': 200,
+      '30%': 300,
+      '40%': 400,
+      '50%': 500,
+      '60%': 600,
+      '70%': 700,
+      '80%': 800,
+      '90%': 1000,
+      'max': 1000
+    }
+  });
+var snapValues = [
+  document.getElementById('price-range-value-lower'),
+  document.getElementById('price-range-value-upper')
+];
+
+snapSlider.noUiSlider.on('update', function( values, handle ) {
+  snapValues[handle].innerHTML = values[handle];
+});
+</script>
+</body>
+
+<!-- Mirrored from foggydesigns.com/tucomilona/html4/list-view.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 19 Sep 2017 17:53:13 GMT -->
+</html>

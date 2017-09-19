@@ -1,0 +1,147 @@
+/*
+popModal - 1.25 [15.08.17]
+Author: vadimsva
+Github: https://github.com/vadimsva/popModal
+*/
+/* popModal */
+.popModal {position:absolute;background:#fff;padding:15px;border:1px solid #c5d0db;box-shadow:0 2px 8px rgba(0,0,0,0.12);text-align:left;max-width:300px;min-width:180px;z-index:9997;box-sizing:border-box;border-radius:3px}
+.popModal .close {line-height:16px;font-size:28px;width:16px;font-weight:bold;font-family:serif;position:absolute;right:8px;top:8px;color:#000;opacity:0.2;padding:0;cursor:pointer;background:transparent;border:0;outline:0}
+.popModal .close:hover {opacity:1}
+.popModal .popModal_content {margin:15px auto;word-wrap:break-word;font-family:sans-serif;font-size:14px;font-weight:initial;font-style:initial;color:initial;text-decoration:initial;text-transform:initial;padding:initial}
+.popModal .popModal_content.popModal_contentOverflow {max-height:200px;overflow-y:auto;overflow-x:hidden;margin:15px -8px;padding:0 7px}
+.popModal .popModal_content:before {content:'';position:absolute;left:0;right:0;height:20px;bottom:-20px}
+.popModal .popModal_content.popModal_asMenu {margin:-5px -15px}
+.popModal .popModal_content.popModal_asMenu ul {list-style:none;padding:0}
+.popModal.bottomRight .popModal_content.popModal_asMenu ul {text-align:right}
+.popModal .popModal_content.popModal_asMenu ul > li {line-height:40px}
+.popModal .popModal_content.popModal_asMenu ul > li:empty {border-top:1px solid #ddd}
+.popModal .popModal_content.popModal_asMenu ul > li > a {display:block;padding:0 15px;text-decoration:none}
+.popModal .popModal_content.popModal_asMenu ul > li > a:hover {background-color:#eee}
+.popModal .popModal_footer {background:#fafafa;padding:15px;border-top:1px solid #ddd;text-align:right;position:absolute;bottom:0;left:0;right:0;border-radius:0 0 3px 3px}
+.popModal .popModal_footer button {margin:0 0 0 5px}
+.popModal:before,
+.popModal:after {content:'';position:absolute;border:10px solid transparent}
+.popModal:after {z-index:1}
+.popModal.bottomLeft:before,
+.popModal.bottomRight:before,
+.popModal.bottomCenter:before {border-top-width:0;border-bottom-color:#c5d0db;top:-10px;left:10px}
+.popModal.bottomLeft:after,
+.popModal.bottomRight:after,
+.popModal.bottomCenter:after {border-top-width:0;border-bottom-color:#fff;top:-9px;left:10px}
+.popModal.bottomRight:before,
+.popModal.bottomRight:after {left:auto;right:10px}
+.popModal.bottomCenter:before,
+.popModal.bottomCenter:after {left:50%;margin-left:-10px}
+.popModal.leftTop:before,
+.popModal.leftCenter:before {border-right-width:0;border-left-color:#c5d0db;top:10px;right:-10px}
+.popModal.leftTop:after,
+.popModal.leftCenter:after {border-right-width:0;border-left-color:#fff;top:10px;right:-9px}
+.popModal.rightTop:before,
+.popModal.rightCenter:before {border-left-width:0;border-right-color:#c5d0db;top:10px;left:-10px}
+.popModal.rightTop:after,
+.popModal.rightCenter:after {border-left-width:0;border-right-color:#fff;top:10px;left:-9px}
+.popModal.leftCenter:before,
+.popModal.rightCenter:before {top:50%;margin-top:-10px}
+.popModal.leftCenter:after, 
+.popModal.rightCenter:after {top:50%;margin-top:-10px}
+@media (max-width: 400px){
+.popModal {position:absolute;max-width:100%!important;right:20px}
+}
+/* dialogModal */
+.dialogModal {position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:9999999;opacity:0;transition:all 200ms ease;backface-visibility:hidden;}
+.dialogModal.open {opacity:1}
+.dialogModal * {box-sizing:border-box}
+.dialogModal_container {position:absolute;top:0;bottom:0;left:0;right:0;overflow-y:scroll}
+.dialogModal .dialogModal_top {/* position:fixed;left:0;right:0; */z-index:2;opacity:0}
+.dialogModal .dialogModal_top .dialogModal_header {padding:15px 25px;line-height:30px;height:60px;font-size:120%;margin:auto;width:450px;background:#fff;border-bottom:1px solid #f5f5f5;position:relative;margin-top: 40px;}
+.dialogModal .dialogModal_top .dialogModal_header .close {line-height:30px;font-size:35px;font-family:serif;color:#000;opacity:0.2;padding:0;cursor:pointer;background:transparent;border:0;outline:0;width:30px;float:right;font-weight: 600;}
+.dialogModal .dialogModal_top .dialogModal_header .close:hover {opacity:1}
+.dialogModal .dialogModal_top .dialogModal_header .dialogPrev.notactive,
+.dialogModal .dialogModal_top .dialogModal_header .dialogNext.notactive {opacity:0.1!important;cursor:default}
+.dialogModal .dialogModal_top .dialogModal_header .dialogPrev,
+.dialogModal .dialogModal_top .dialogModal_header .dialogNext {line-height:23px;font-size:30px;color:#000;opacity:0.2;cursor:pointer;background:transparent;border:0;outline:0;float:right;width:30px;height:30px;text-align:center}
+.dialogModal .dialogModal_top .dialogModal_header .dialogPrev:hover,
+.dialogModal .dialogModal_top .dialogModal_header .dialogNext:hover {opacity:1} 
+.dialogModal .dialogModal_top .dialogModal_header span {display:inline-block;overflow:hidden;white-space:nowrap;width:calc(100% - 90px);text-overflow:ellipsis}
+.dialogModal .dialogModal_top .dialogModal_header:after {content:'';position:absolute;bottom:-11px;left:0;right:0;background:rgba(255,255,255,0.5);height:10px}
+.dialogModal .dialogModal_body {position:absolute;width:450px;left:0;right:0;margin:0 auto 40px;background:#fff;font-family:sans-serif;font-size:14px;font-weight:initial;font-style:initial;color:initial;text-decoration:initial;text-transform:initial;opacity:0;border-radius:0 0 3px 3px}
+.dialogModal .dialogModal_body .dialogModal_header {display:none}
+.dialogModal .dialogModal_content {padding: 15px 25px 25px;line-height: 20px;min-height: 200px;float: left;width: 100%;background: #FFF;}
+.dialogModal .dialogModal_footer {background:#fafafa;padding:15px 25px;border-top:1px solid #ddd;text-align:right;border-radius:0 0 3px 3px}
+.dialogModal .dialogModal_footer button {margin:0 0 0 5px}
+.dialogModal.modal .dialogModal_container {opacity:0;transition:all 200ms ease}
+.dialogModal.modal {overflow-y:hidden}
+.dialogModal.modal .dialogModal_container {position:absolute;overflow-y:auto;margin:auto;width:650px;left:0;right:0;bottom:40px}
+.dialogModal.modal .dialogModal_top .dialogModal_header {border-radius:3px 3px 0 0}
+.dialogModal.modal .dialogModal_top {margin-top:-60px}
+.dialogModal.modal .dialogModal_body {margin:auto;width:auto}
+body.dialogModalOpen {overflow:hidden}
+@media (max-width: 680px){
+.dialogModal .dialogModal_container, .dialogModal .dialogModal_top .dialogModal_header, .dialogModal .dialogModal_body {width:auto!important}
+}
+@media (max-width: 400px){
+.dialogModal .dialogModal_body,
+.dialogModal .dialogModal_footer {border-radius:0}
+}
+@keyframes needConfirm {
+  0%, 100% {transform:scale(1)}
+	50% {transform:scale(1.1)}
+}
+body.confirmModalOpen {overflow:hidden}
+@media (max-width: 430px){
+.confirmModal .confirmModal_body {width:100%}
+.confirmModal .confirmModal_body,
+.confirmModal .confirmModal_footer {border-radius:0}
+}
+/* animation */
+.animated {animation-duration:0.2s;animation-fill-mode:both;transform:translateZ(0);backface-visibility:hidden}
+.fadeInLeft {animation-name:fadeInLeft}
+.fadeOutLeft {animation-name:fadeOutLeft}
+.fadeInRight {animation-name:fadeInRight}
+.fadeOutRight {animation-name:fadeOutRight}
+.fadeInTop {animation-name:fadeInTop}
+.fadeInTopBig {animation-name:fadeInTopBig}
+.fadeOutTop {animation-name:fadeOutTop}
+.fadeInBottom {animation-name:fadeInBottom}
+.fadeOutBottom {animation-name:fadeOutBottom}
+
+@keyframes fadeInLeft {
+  0% {opacity:0;transform:translateX(-10px)}
+  100% {opacity:1;transform:translateX(0)}
+}
+@keyframes fadeOutLeft {
+  0% {opacity:1;transform:translateX(0)}
+	100% {opacity:0;transform:translateX(-10px)}
+}
+
+@keyframes fadeInRight {
+  0% {opacity:0;transform:translateX(10px)}
+  100% {opacity:1;transform:translateX(0)}
+}
+@keyframes fadeOutRight {
+  0% {opacity:1;transform:translateX(0)}
+	100% {opacity:0;transform:translateX(10px)}
+}
+
+@keyframes fadeInTop {
+  0% {opacity:0;transform:translateY(-10px)}
+  100% {opacity:1;transform:translateY(0)}
+}
+@keyframes fadeOutTop {
+  0% {opacity:1;transform: translateY(0)}
+	100% {opacity:0;transform:translateY(-10px)}
+}
+
+@keyframes fadeInTopBig {
+  0% {opacity:0;transform:translateY(-100%)}
+  100% {opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeInBottom {
+  0% {opacity:0;transform:translateY(10px)}
+  100% {opacity:1;transform:translateY(0)}
+}
+@keyframes fadeOutBottom {
+  0% {opacity:1;transform:translateY(0)}
+	100% {opacity:0;transform:translateY(10px)}
+}
